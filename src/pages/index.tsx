@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 
@@ -13,8 +14,10 @@ const geistMono = Geist_Mono({
 
 export default function Home() {
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-gray-900">
+		<div className="min-h-screen flex items-center justify-center bg-black">
 			<h2 className="text-4xl text-gray-100">Hello World</h2>
+
+			<Button>Button</Button>
 		</div>
 	);
 }
