@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 export function FeatureSection() {
   return (
@@ -38,7 +38,10 @@ export function FeatureSection() {
               Tenha uma loja online personalizada com a cara da sua marca
             </h2>
 
-            <Button asChild className="w-fit rounded-full hidden mt-4 md:mt-auto md:flex">
+            <Button
+              asChild
+              className="w-fit rounded-full hidden mt-4 md:mt-auto md:flex"
+            >
               <Link href="/criar-loja">
                 Criar loja grátis
                 <ArrowRight />
@@ -48,10 +51,19 @@ export function FeatureSection() {
 
           <div className="flex flex-col items-center justify-center w-full">
             <div className="w-full max-w-md overflow-hidden">
-              <Image src="/feature-section.svg" alt="Features" width={440} height={330} className="object-cover w-full" />
+              <Image
+                src="/feature-section.svg"
+                alt="Features"
+                width={440}
+                height={330}
+                className="object-cover w-full"
+              />
             </div>
 
-            <Button asChild className="w-full gap-2 rounded-full mt-4 md:mt-auto md:hidden">
+            <Button
+              asChild
+              className="w-full gap-2 rounded-full mt-4 md:mt-auto md:hidden"
+            >
               <Link href="/criar-loja">
                 Criar loja grátis
                 <ArrowRight />
@@ -59,9 +71,7 @@ export function FeatureSection() {
             </Button>
           </div>
         </div>
-
       </div>
     </section>
   )
 }
-
