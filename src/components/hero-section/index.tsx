@@ -5,24 +5,28 @@ import { Button } from '../ui/button'
 
 export function HeroSection() {
   return (
-    <section className="container relative flex items-center justify-center mt-16">
+    <section className="container relative flex items-center justify-center mt-16 py-8 md:py-0">
       <div className="grid grid-cols-1 gap-8 items-center min-h-[20rem] md:grid-cols-2 md:h-[36rem]">
         <div className="flex flex-col items-center justify-center gap-4 md:items-start">
-          <h1 className="text-gray-100 text-heading-hg">
+          <h1 className="text-gray-100 text-heading-hg text-center md:text-start">
             Venda seus produtos com afiliado em um único lugar
           </h1>
 
           <div className="flex flex-col items-center justify-center gap-4 md:items-start">
             <div>
-              <div className="flex items-center gap-2">
-                <Clock className="text-cyan-100 size-4" />
+              <div className="flex items-start gap-2">
+                <div>
+                  <Clock className="text-cyan-100 w-4 h-6" />
+                </div>
                 <span className="text-gray-200">
                   Crie seu site em menos de 5 minutos
                 </span>
               </div>
 
-              <div className="flex items-center gap-2">
-                <Clock className="text-cyan-100 size-4" />
+              <div className="flex items-start gap-2">
+                <div>
+                  <Clock className="text-cyan-100 w-4 h-6" />
+                </div>
                 <span className="text-gray-200">
                   Acompanhe e otimize seu negócio online
                 </span>
