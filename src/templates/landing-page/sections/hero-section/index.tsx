@@ -19,7 +19,7 @@ export function HeroSection() {
                 <div>
                   <Clock className="text-cyan-100 w-4 h-6" />
                 </div>
-                <span className="text-gray-200">
+                <span className="text-body-md text-gray-200">
                   Crie seu site em menos de 5 minutos
                 </span>
               </div>
@@ -28,7 +28,7 @@ export function HeroSection() {
                 <div>
                   <Store className="text-cyan-100 w-4 h-6" />
                 </div>
-                <span className="text-gray-200">
+                <span className="text-body-md text-gray-200">
                   Acompanhe e otimize seu negócio online
                 </span>
               </div>
