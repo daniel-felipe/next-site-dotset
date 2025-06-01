@@ -12,7 +12,7 @@ export function FeatureSection() {
           Simples
         </span>
 
-        <h2 className="text-gray-100 text-heading-lg">
+        <h2 className="text-gray-100 text-heading-lg font-sans">
           Crie um catálogo de produtos online em poucos minutos
         </h2>
       </div>
@@ -22,7 +22,7 @@ export function FeatureSection() {
           Prático
         </span>
 
-        <h2 className="text-gray-100 text-heading-lg">
+        <h2 className="text-gray-100 text-heading-lg font-sans">
           Venda para seu público através de uma plataforma única
         </h2>
       </div>
@@ -34,7 +34,7 @@ export function FeatureSection() {
               Personalizável
             </span>
 
-            <h2 className="text-gray-100 text-heading-lg">
+            <h2 className="text-gray-100 text-heading-lg font-sans">
               Tenha uma loja online personalizada com a cara da sua marca
             </h2>
 

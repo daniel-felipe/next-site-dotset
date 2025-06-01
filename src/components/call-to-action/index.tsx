@@ -1,12 +1,6 @@
 import { ArrowRight, Store } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
-import { PT_Sans_Caption } from 'next/font/google'
-
-const ptSansCaption = PT_Sans_Caption({
-  subsets: ['latin'],
-  weight: '700',
-})
 
 export function CallToAction() {
   return (
@@ -16,9 +10,7 @@ export function CallToAction() {
       </div>
 
       <div className="container py-20 flex flex-col items-center justify-center gap-10 text-center">
-        <h2
-          className={`${ptSansCaption.className} text-gray-100 text-balance text-heading-xl max-w-lg`}
-        >
+        <h2 className="text-gray-100 text-balance text-heading-xl max-w-lg font-sans">
           Crie uma loja online e inicie seus vendas ainda hoje
         </h2>
 
