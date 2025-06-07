@@ -1,5 +1,6 @@
 import { Search } from '@/components/search'
 import { useRouter } from 'next/router'
+import { PostCard } from './components/post-card'
 
 export function BlogList() {
   const router = useRouter()
@@ -25,6 +26,18 @@ export function BlogList() {
           <Search />
         </div>
       </header>
+
+      <PostCard
+        title="Transformando seu negócio em uma loja virtual"
+        description="lorem ipsum dolor amet description amet dolor ipsum lorem description part two..."
+        date="20/12/2024"
+        image="/assets/primeiro-post.png"
+        slug="transformando"
+        author={{
+          avatar: '/customer-01.png',
+          name: 'Aspen Dokidis',
+        }}
+      />
     </div>
   )
 }
