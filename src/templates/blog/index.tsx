@@ -34,7 +34,7 @@ export function BlogList() {
       <PostList>
         {posts.map((post) => (
           <PostCard
-            key={post.id}
+            key={post._id}
             title={post.title}
             description={post.description}
             date={new Date(post.date).toLocaleDateString('pt-BR')}
