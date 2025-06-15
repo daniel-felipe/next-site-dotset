@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { allPosts, Post } from 'contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
 
 import { Search } from '@/components/search'
 

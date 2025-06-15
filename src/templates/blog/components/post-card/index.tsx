@@ -38,7 +38,7 @@ export function PostCard({
             alt=""
             width={288}
             height={144}
-            className="w-full h-40 object-cover object-center rounded-t"
+            className="w-full h-40 object-cover object-center rounded"
           />
         </div>
 
