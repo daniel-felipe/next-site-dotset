@@ -12,11 +12,19 @@ import {
 } from '@/components/ui/breadcrumb'
 import { Avatar } from '@/components/avatar'
 import { Markdown } from '@/components/markdown'
+import { Button } from '@/components/ui/button'
+import { useShare } from '@/hooks/use-share'
 
 export default function PostPage() {
   const router = useRouter()
   const slug = router.query.slug as string
   const post = allPosts.find((post) => post.slug === slug?.trim().toLowerCase())
+
+  const { shareButtons } = useShare({
+    url: `https://site.set/blog/${slug}`,
+    title: post?.title,
+    text: post?.description,
+  })
 
   if (!post) return
 
@@ -79,6 +87,28 @@ export default function PostPage() {
               <Markdown content={post.body.raw} />
             </div>
           </article>
+
+          <aside className="space-y-6">
+            <div className="rounded-lg bg-gray-700 p-4 md:p-6">
+              <h2 className="mb-4 text-heading-xs text-gray-100">
+                Compartilhar
+              </h2>
+
+              <div className="space-y-3">
+                {shareButtons.map(({ provider, name, action, icon: Icon }) => (
+                  <Button
+                    key={provider}
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                    onClick={() => action()}
+                  >
+                    <Icon className="size-4" />
+                    {name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
