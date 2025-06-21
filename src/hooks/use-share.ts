@@ -1,5 +1,6 @@
-import { Facebook, Linkedin, Slack, Twitter } from 'lucide-react'
+import { Facebook, Link2, Linkedin, Slack, Twitter } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
+import { useClipboard } from './use-clipboard'
 
 type ShareConfig = {
   url: string
@@ -11,7 +12,7 @@ type UseShareProps = ShareConfig & {
   clipboardTimeout?: number
 }
 
-type SocialProvider = 'linkedin' | 'facebook' | 'slack' | 'twitter'
+type SocialProvider = 'linkedin' | 'facebook' | 'slack' | 'twitter' | 'clipboard'
 
 const SOCIAL_PROVIDERS = {
   linkedin: {
@@ -44,6 +45,8 @@ export function useShare({
   text,
   clipboardTimeout = 2000,
 }: UseShareProps) {
+  const { isCopied, copy } = useClipboard({ timeout: clipboardTimeout })
+
   const shareConfig = useMemo(() => {
     return {
       url,
@@ -53,8 +56,12 @@ export function useShare({
   }, [text, title, url])
 
   const share = useCallback(
-    (provider: SocialProvider) => {
+    async (provider: SocialProvider) => {
       try {
+        if (provider === 'clipboard') {
+          return await copy(url)
+        }
+
         const providerConfig = SOCIAL_PROVIDERS[provider]
 
         if (!providerConfig) {
@@ -74,7 +81,7 @@ export function useShare({
         return false
       }
     },
-    [shareConfig]
+    [shareConfig, copy, url]
   )
 
   const shareButtons = useMemo(
@@ -87,8 +94,14 @@ export function useShare({
           action: () => share(key as SocialProvider),
         }
       }),
+      {
+        provider: 'clipboard',
+        name: isCopied ? 'Link copiado!' : 'Copiar link',
+        icon: Link2,
+        action: () => share('clipboard')
+      }
     ],
-    [share]
+    [share, isCopied]
   )
 
   return {
