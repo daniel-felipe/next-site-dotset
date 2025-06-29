@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 
 export function CallToAction() {
   return (
-    <section className="relative bg-[url('/call-to-action-background.svg')] bg-cover bg-top">
+    <section className="relative bg-[url('/call-to-action-background.svg')] bg-cover bg-top mt-12">
       <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 p-4 bg-cyan-300 w-fit rounded-full">
         <Store className="text-cyan-100" />
       </div>
