@@ -1,4 +1,4 @@
-import { Facebook, Link2, Linkedin, Slack, Twitter } from 'lucide-react'
+import { Facebook, Link, Linkedin, Slack, Twitter } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
 import { useClipboard } from './use-clipboard'
 
@@ -102,7 +102,7 @@ export function useShare({
       {
         provider: 'clipboard',
         name: isCopied ? 'Link copiado!' : 'Copiar link',
-        icon: Link2,
+        icon: Link,
         action: () => share('clipboard'),
       },
     ],

@@ -31,8 +31,8 @@ export function PostPage() {
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
 
   return (
-    <main className="mt-32 text-gray-100">
-      <div className="container space-y-12 px-4 md:px-8">
+    <main className="py-20 text-gray-100">
+      <div className="container space-y-8 px-4 md:px-8">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -90,20 +90,20 @@ export function PostPage() {
 
           <aside className="space-y-6">
             <div className="rounded-lg bg-gray-700">
-              <h2 className="mb-4 text-heading-xs text-gray-100">
+              <h2 className="hidden md:block mb-4 text-heading-xs text-gray-100">
                 Compartilhar
               </h2>
 
-              <div className="space-y-3">
+              <div className="flex justify-start gap-2 md:flex-col">
                 {shareButtons.map(({ provider, name, action, icon: Icon }) => (
                   <Button
                     key={provider}
                     variant="outline"
-                    className="w-full justify-start gap-2"
+                    className="w-fit md:w-full justify-start gap-2"
                     onClick={() => action()}
                   >
                     <Icon className="size-4" />
-                    {name}
+                    <span className="hidden md:block">{name}</span>
                   </Button>
                 ))}
               </div>
