@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router'
 import { allPosts } from 'contentlayer/generated'
+import { useRouter } from 'next/router'
 
 import { Search } from '@/components/search'
 
+import { Inbox } from 'lucide-react'
 import { PostCard } from './components/post-card'
 import { PostList } from './components/post-list'
-import { Inbox } from 'lucide-react'
 
 export function BlogList() {
   const router = useRouter()

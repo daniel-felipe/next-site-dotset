@@ -12,7 +12,12 @@ type UseShareProps = ShareConfig & {
   clipboardTimeout?: number
 }
 
-type SocialProvider = 'linkedin' | 'facebook' | 'slack' | 'twitter' | 'clipboard'
+type SocialProvider =
+  | 'linkedin'
+  | 'facebook'
+  | 'slack'
+  | 'twitter'
+  | 'clipboard'
 
 const SOCIAL_PROVIDERS = {
   linkedin: {
@@ -98,8 +103,8 @@ export function useShare({
         provider: 'clipboard',
         name: isCopied ? 'Link copiado!' : 'Copiar link',
         icon: Link2,
-        action: () => share('clipboard')
-      }
+        action: () => share('clipboard'),
+      },
     ],
     [share, isCopied]
   )
