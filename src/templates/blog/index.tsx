@@ -25,7 +25,7 @@ export function BlogList({ posts }: BlogListProps) {
       )
     : posts
 
-  console.log(postList);
+  console.log(postList)
 
   const hasPosts = postList.length > 0
 
