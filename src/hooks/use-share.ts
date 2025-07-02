@@ -23,24 +23,24 @@ const SOCIAL_PROVIDERS = {
   linkedin: {
     name: 'LinkedIn',
     icon: Linkedin,
-    shareUrl: (config: any) =>
+    shareUrl: (config: ShareConfig) =>
       `https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(config.url)}`,
   },
   facebook: {
     name: 'Facebook',
     icon: Facebook,
-    shareUrl: (config: any) =>
+    shareUrl: (config: ShareConfig) =>
       `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(config.url)}`,
   },
   slack: {
     name: 'Slack',
     icon: Slack,
-    shareUrl: (config: any) => `#`,
+    shareUrl: () => `#`,
   },
   twitter: {
     name: 'Twitter',
     icon: Twitter,
-    shareUrl: (config: any) => '#',
+    shareUrl: () => '#',
   },
 }
 

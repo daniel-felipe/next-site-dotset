@@ -1,4 +1,4 @@
-import { allPosts } from 'contentlayer/generated'
+import { Post } from 'contentlayer/generated'
 import { useRouter } from 'next/router'
 
 import { Search } from '@/components/search'
@@ -7,7 +7,11 @@ import { Inbox } from 'lucide-react'
 import { PostCard } from './components/post-card'
 import { PostList } from './components/post-list'
 
-export function BlogList() {
+export type BlogListProps = {
+  posts: Post[]
+}
+
+export function BlogList({ posts }: BlogListProps) {
   const router = useRouter()
   const query = router.query.q as string
 
@@ -15,13 +19,15 @@ export function BlogList() {
     ? `Resultados de busca para "${query}"`
     : 'Dicas e estratégias para impulsionar seu negócio'
 
-  const posts = query
-    ? allPosts.filter((post) =>
+  const postList = query
+    ? posts.filter((post) =>
         post.title.toLowerCase()?.includes(query.trim().toLowerCase())
       )
-    : allPosts
+    : posts
 
-  const hasPosts = posts.length > 0
+  console.log(postList);
+
+  const hasPosts = postList.length > 0
 
   return (
     <div className="flex flex-col py-24 flex-grow h-full">
@@ -43,7 +49,7 @@ export function BlogList() {
 
       {hasPosts ? (
         <PostList>
-          {posts.map((post) => (
+          {postList.map((post) => (
             <PostCard
               key={post._id}
               title={post.title}
