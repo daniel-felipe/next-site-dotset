@@ -35,7 +35,7 @@ const SOCIAL_PROVIDERS = {
   slack: {
     name: 'Slack',
     icon: Slack,
-    shareUrl: () => `#`,
+    shareUrl: () => '#',
   },
   twitter: {
     name: 'Twitter',
