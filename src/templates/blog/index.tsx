@@ -1,9 +1,11 @@
+'use client'
+
 import { Post } from 'contentlayer/generated'
-import { useRouter } from 'next/router'
 
 import { Search } from '@/components/search'
 
 import { Inbox } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 import { PostCard } from './components/post-card'
 import { PostList } from './components/post-list'
 
@@ -12,8 +14,8 @@ export type BlogListProps = {
 }
 
 export function BlogList({ posts }: BlogListProps) {
-  const router = useRouter()
-  const query = router.query.q as string
+  const searchParams = useSearchParams()
+  const query = searchParams?.get('q') ?? ''
 
   const pageTitle = query
     ? `Resultados de busca para "${query}"`
@@ -24,8 +26,6 @@ export function BlogList({ posts }: BlogListProps) {
         post.title.toLowerCase()?.includes(query.trim().toLowerCase())
       )
     : posts
-
-  console.log(postList)
 
   const hasPosts = postList.length > 0
 
