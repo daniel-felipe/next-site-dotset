@@ -2,7 +2,7 @@ import { Facebook, Link, Linkedin, Slack, Twitter } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
 import { useClipboard } from './use-clipboard'
 
-type ShareConfig = {
+export type ShareConfig = {
   url: string
   title?: string
   text?: string
