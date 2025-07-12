@@ -1,4 +1,4 @@
-import { Facebook, Link, Linkedin, Slack, Twitter } from 'lucide-react'
+import { Facebook, Link, Linkedin, Slack, Twitter, AtSign } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
 import { useClipboard } from './use-clipboard'
 
@@ -35,12 +35,20 @@ const SOCIAL_PROVIDERS = {
   slack: {
     name: 'Slack',
     icon: Slack,
-    shareUrl: () => '#',
+    shareUrl: (config: ShareConfig) =>
+      `https://slack.com/share?url=${encodeURIComponent(config.url)}&text=${encodeURIComponent(config.title || '')}`,
   },
   twitter: {
     name: 'Twitter',
     icon: Twitter,
-    shareUrl: () => '#',
+    shareUrl: (config: ShareConfig) =>
+      `https://x.com/intent/tweet?url=${encodeURIComponent(config.url)}&text=${encodeURIComponent(config.title || '')}`,
+  },
+  threads: {
+    name: 'Threads',
+    icon: AtSign,
+    shareUrl: (config: ShareConfig) =>
+      `https://threads.net/intent/post?text=${encodeURIComponent(`${config.title || ''} ${config.url}`)}`,
   },
 }
 
