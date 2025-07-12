@@ -1,4 +1,4 @@
-import { Facebook, Link, Linkedin, Slack, Twitter, AtSign } from 'lucide-react'
+import { AtSign, Facebook, Link, Linkedin, Slack, Twitter } from 'lucide-react'
 import { useCallback, useMemo } from 'react'
 import { useClipboard } from './use-clipboard'
 

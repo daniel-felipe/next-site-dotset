@@ -18,9 +18,9 @@ export const metadata: Metadata = {
         width: 800,
         height: 600,
         alt: 'Site.Set',
-      }
-    ]
-  }
+      },
+    ],
+  },
 }
 
 export default function Page() {
